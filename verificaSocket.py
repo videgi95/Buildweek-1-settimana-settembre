@@ -15,8 +15,8 @@ porte_chiuse = []
 # Scansione delle porte
 def verificaSocket(ip, lowport, highport):
     for port in range(lowport, highport+1):
-        s = so.socket(so.AF_INET, so.SOCK_STREAM)#utilizzo di AF_INET per connessione iPv4 e SOCK_STREAM per definire che il socket sia di tipo TCP
-        so.setdefaulttimeout(0.01)  # Timeout di 0.01 secondo
+        s = so.socket(so.AF_INET, so.SOCK_STREAM)# utilizzo di AF_INET per connessione iPv4 e SOCK_STREAM per definire che il socket sia di tipo TCP
+        so.setdefaulttimeout(0.01)  # Timeout di chiusura di connessione per non lasciare il programma in attesa di risposta troppo a lungo
         result = s.connect_ex((ip, port))  # Test di connessione alla porta(ritorna un errore e non alza l'eccezione in caso di errore)
         if result == 0: # connect_ex ritorna 0 in caso di connessione riuscita altrimenti qualsiasi altro errore risulta in porta chiusa
             #print(f"Porta {port}: Aperta")
