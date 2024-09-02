@@ -1,7 +1,7 @@
 import socket as so
 from prettytable import PrettyTable
 
-target_ip = input("Inserire l'ip del web server interessato: \n")
+target_ip = input("Inserire l'ip del web server interessato: ")
 portrange = input("Inserisci un port range (es 5-200): ")
 lowport = 1
 highport = 1024
@@ -36,7 +36,7 @@ def crea_tabella(target_ip , porte_aperte, porte_chiuse):
     for port in porte_chiuse:
         tabella2.add_row([port , 'Chiusa'])
 
-    print(f"Risultati per la scansione su {target_ip}: \n")
+    print(f"Risultati per la scansione su {target_ip}: ")
     print(tabella1)
     print(tabella2)
 
